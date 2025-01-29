@@ -2,10 +2,17 @@
 
 # This scrpit analysis nginx logs
 
-LOG_FILE="./nginx-access.log"
+LOG_FILE='./nginx-access.log'
 
 # Clear terminal window
 clear
+
+# Check if log file exists and is a file
+if [[ ! -e "${LOG_FILE}" ]]
+then
+  echo "Cannot open ${LOG_FILE}" >&2
+  exit 1
+fi
 
 # Top 5 IP addresses with the most requests
 echo "Top 5 IP addresses with the most requests:"
