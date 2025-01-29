@@ -7,7 +7,7 @@ LOG_FILE='./nginx-access.log'
 # Clear terminal window
 clear
 
-# Check if log file exists and is a file
+# Check if LOG_FILE exists and is a file
 if [[ ! -e "${LOG_FILE}" ]]
 then
   echo "Cannot open ${LOG_FILE}" >&2
